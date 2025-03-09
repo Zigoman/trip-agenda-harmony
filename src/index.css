@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -35,19 +38,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -96,6 +92,51 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-anaplan-neutral-athens text-anaplan-neutral-tuna font-['Inter',sans-serif];
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .diagonal-line {
+    @apply relative overflow-hidden;
+  }
+  
+  .diagonal-line::after {
+    content: '';
+    @apply absolute h-[2px] bg-anaplan-orange transform rotate-[30deg] origin-left;
+    top: 50%;
+    left: 0;
+    width: 0%;
+    opacity: 0;
+    animation: diagonal-line 1s ease-out forwards;
+    animation-delay: 0.3s;
+  }
+
+  .time-chip {
+    @apply px-3 py-1 bg-anaplan-blue-stinson text-anaplan-blue-midnight rounded-full text-sm font-medium inline-block;
+  }
+
+  .session-card {
+    @apply border border-anaplan-neutral-ghost bg-white rounded-lg p-6 mb-4 shadow-sm hover:shadow-md transition-all duration-300;
+  }
+
+  .session-title {
+    @apply text-xl font-semibold text-anaplan-blue-midnight mb-2;
+  }
+
+  .agenda-tab {
+    @apply px-6 py-3 font-medium rounded-t-lg transition-all duration-300;
+  }
+
+  .agenda-tab.active {
+    @apply bg-white text-anaplan-blue-midnight border-t-2 border-l border-r border-anaplan-neutral-ghost border-t-anaplan-orange;
+  }
+
+  .agenda-tab.inactive {
+    @apply bg-anaplan-neutral-linkwater text-anaplan-neutral-kimberly hover:bg-white;
   }
 }

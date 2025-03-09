@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,28 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				anaplan: {
+					"blue-stinson": "#96B5FA",
+					"blue-coats": "#6C96F4",
+					"blue-mariner": "#3C67EA",
+					"blue-matisse": "#1947BA",
+					"blue-midnight": "#081C53",
+					"blue-zodiac": "#0B2265",
+					"neutral-athens": "#F8F8FA",
+					"neutral-linkwater": "#E6EBF8",
+					"neutral-mischka": "#F0F1F7",
+					"neutral-ghost": "#DFE2EB",
+					"neutral-pebble": "#B5BDD5",
+					"neutral-cadet": "#909CC0",
+					"neutral-hazell": "#8594b2",
+					"neutral-manatee": "#7885AB",
+					"neutral-kimberly": "#596895",
+					"neutral-comet": "#485478",
+					"neutral-mulledwine": "#323C5A",
+					"neutral-martinique": "#242D48",
+					"neutral-tuna": "#161F38",
+					"orange": "#FF5C00"
 				}
 			},
 			borderRadius: {
@@ -84,11 +107,31 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' }
+				},
+				'slide-up': {
+					'0%': { transform: 'translateY(20px)', opacity: '0' },
+					'100%': { transform: 'translateY(0)', opacity: '1' }
+				},
+				'slide-in-right': {
+					'0%': { transform: 'translateX(20px)', opacity: '0' },
+					'100%': { transform: 'translateX(0)', opacity: '1' }
+				},
+				'diagonal-line': {
+					'0%': { width: '0%', opacity: '0' },
+					'100%': { width: '100%', opacity: '1' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.6s ease-out',
+				'slide-up': 'slide-up 0.6s ease-out',
+				'slide-in-right': 'slide-in-right 0.5s ease-out',
+				'diagonal-line': 'diagonal-line 1s ease-out forwards'
 			}
 		}
 	},
