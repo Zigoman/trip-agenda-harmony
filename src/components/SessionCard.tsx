@@ -44,7 +44,7 @@ const SessionCard: React.FC<SessionCardProps> = ({ session }) => {
     return participantsString
       .split(/,|\(|\)|\+|and/)
       .map(name => name.trim())
-      .filter(name => name && name !== 'You' && !name.toLowerCase().includes('others') && !name.toLowerCase().includes('team') && name.length > 1);
+      .filter(name => name && name !== 'You' && name !== 'Nir Zigdon' && !name.toLowerCase().includes('others') && !name.toLowerCase().includes('team') && name.length > 1);
   };
 
   const participantsList = parseParticipants(session.participants);
@@ -69,8 +69,8 @@ const SessionCard: React.FC<SessionCardProps> = ({ session }) => {
                     imagePath={participantImages[participant]}
                   />
                 ))}
-                {/* Add 'You' avatar in the header as well */}
-                <ParticipantAvatar name="You" />
+                {/* Add 'Nir Zigdon' avatar in the header as well */}
+                <ParticipantAvatar name="Nir Zigdon" />
               </div>
             </div>
           </div>
@@ -92,7 +92,7 @@ const SessionCard: React.FC<SessionCardProps> = ({ session }) => {
                   )}
                   
                   <div>
-                    <span className="font-medium text-anaplan-blue-midnight">Participants:</span> {session.participants}
+                    <span className="font-medium text-anaplan-blue-midnight">Participants:</span> {session.participants.replace(/\bYou\b/g, "Nir Zigdon")}
                   </div>
                   
                   {/* Participant Avatars - Complete list in expanded view */}
@@ -106,8 +106,8 @@ const SessionCard: React.FC<SessionCardProps> = ({ session }) => {
                           imagePath={participantImages[participant]}
                         />
                       ))}
-                      {/* Add 'You' avatar */}
-                      <ParticipantAvatar name="You" />
+                      {/* Add 'Nir Zigdon' avatar */}
+                      <ParticipantAvatar name="Nir Zigdon" />
                     </div>
                   </div>
                   
@@ -116,7 +116,7 @@ const SessionCard: React.FC<SessionCardProps> = ({ session }) => {
                       <span className="font-medium text-anaplan-blue-midnight">Key Instructions:</span>
                       <ul className="list-disc pl-5 mt-1 space-y-1">
                         {session.instructions.split('\n').map((instruction, i) => (
-                          <li key={i}>{instruction}</li>
+                          <li key={i}>{instruction.replace(/\bYou\b/g, "Nir Zigdon")}</li>
                         ))}
                       </ul>
                     </div>

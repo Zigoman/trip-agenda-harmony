@@ -12,7 +12,7 @@ const day1Sessions: Session[] = [
     time: '8:15 AM – 8:30 AM',
     duration: '15 minutes',
     title: 'Arrival',
-    participants: 'All arriving guests (Justin Gill, Mike Kehler, Nitzan Paz, Yaniv Dassa, You)',
+    participants: 'All arriving guests (Justin Gill, Mike Kehler, Nitzan Paz, Yaniv Dassa, Nir Zigdon)',
     instructions: 'Expect traffic; aim to be at the office by 9:00 AM.'
   },
   {
@@ -57,7 +57,7 @@ const day1Sessions: Session[] = [
     duration: '30 minutes',
     title: 'Team Structure Connect',
     speakers: 'Aniruddha Shendrikar, Ankur (optional), plus open discussion',
-    participants: 'You, Justin Gill, Nitzan Paz, Yaniv Dassa',
+    participants: 'Nir Zigdon, Justin Gill, Nitzan Paz, Yaniv Dassa',
     instructions: 'Review team org charts, upcoming positions, recruitment statuses.\nQ&A on team needs.'
   },
   {
@@ -98,7 +98,7 @@ const day1Sessions: Session[] = [
     time: '1:30 PM – 2:30 PM',
     duration: '60 minutes',
     title: 'API Dates & Negotiations Meeting',
-    participants: 'You, Nitzan Paz, Justin Gill, Yaniv Dassa, Ashish Kapoor, Monisha',
+    participants: 'Nir Zigdon, Nitzan Paz, Justin Gill, Yaniv Dassa, Ashish Kapoor, Monisha',
     instructions: 'Discuss API release timelines and any required agreements.\nAshish and Monisha will take minutes of the meeting, and share action items afterward.'
   },
   {
@@ -122,7 +122,7 @@ const day1Sessions: Session[] = [
     time: '3:15 PM – 4:15 PM',
     duration: '60 minutes (approx.)',
     title: 'PlanIQ UI Retrospective',
-    participants: 'You, potential attendance by Mike (schedule permitting), Ashish, UI Team',
+    participants: 'Nir Zigdon, potential attendance by Mike (schedule permitting), Ashish, UI Team',
     instructions: 'Review prior sprint outcomes, gather improvement ideas.'
   },
   {
@@ -157,7 +157,7 @@ const day2Sessions: Session[] = [
     time: '10:00 AM – 10:30 AM',
     duration: '30 minutes',
     title: 'Observing Quarterly Planning Kickoff (Radio/Upland Orchestrator)',
-    participants: 'You, optional for Justin/Nitzan/Yaniv',
+    participants: 'Nir Zigdon, optional for Justin/Nitzan/Yaniv',
     instructions: 'Attend as observers to see how another team structures its planning.'
   },
   {
@@ -189,7 +189,7 @@ const day2Sessions: Session[] = [
     duration: '60 minutes',
     title: 'Bi-Weekly Executive WSR (Rescheduled)',
     speakers: 'Mike Kehler, others as relevant',
-    participants: 'You, the leadership team',
+    participants: 'Nir Zigdon, the leadership team',
     instructions: 'Combined with the usual WSR to avoid late evening calls.'
   },
   {
@@ -205,7 +205,7 @@ const day2Sessions: Session[] = [
     time: '2:30 PM – 3:30 PM',
     duration: '60 minutes',
     title: 'Team Deep Dive (PlanIQ & Related Projects)',
-    participants: 'You, PlanIQ team members',
+    participants: 'Nir Zigdon, PlanIQ team members',
     instructions: 'Explore further architecture details, knowledge sharing, or any urgent tasks.'
   },
   {
@@ -228,7 +228,7 @@ const day2Sessions: Session[] = [
     time: '4:45 PM – 5:30 PM',
     duration: '~45 minutes',
     title: 'Agile Workshop',
-    speakers: 'You, Ashish Kapoor, Aniruddha Shendrikar',
+    speakers: 'Nir Zigdon, Ashish Kapoor, Aniruddha Shendrikar',
     participants: 'All guests',
     instructions: 'Review sprint planning, grooming, and KPI tracking (burn-down charts, velocity, backlog health).\nIdentify process optimizations and address any bottlenecks.'
   },
@@ -237,7 +237,7 @@ const day2Sessions: Session[] = [
     time: '5:30 PM – 5:45 PM',
     duration: '15 minutes',
     title: 'One-on-One with Ashish (Optional)',
-    participants: 'You, Ashish',
+    participants: 'Nir Zigdon, Ashish',
     instructions: 'Catch up on personal action items or feedback.'
   }
 ];
@@ -255,7 +255,7 @@ const day3Sessions: Session[] = [
     time: '9:45 AM – 10:30 AM',
     duration: '45 minutes',
     title: 'PlanIQ UI Roadmap / PlanIQ 2.0',
-    speakers: 'You (leading UI), with Mike, Justin, Nitzan, Yaniv',
+    speakers: 'Nir Zigdon (leading UI), with Mike, Justin, Nitzan, Yaniv',
     participants: 'All guests',
     instructions: 'Present upcoming features, discuss impact on Data & AI value additions.\nOutline short-term vs. FY25 vision.'
   },
@@ -271,7 +271,7 @@ const day3Sessions: Session[] = [
     time: '10:45 AM – 11:45 AM',
     duration: '60 minutes',
     title: 'Team Breakout (Quarterly Planning Part 1)',
-    participants: 'You, relevant sub-teams',
+    participants: 'Nir Zigdon, relevant sub-teams',
     instructions: 'Identify tasks, resources needed, timelines for the next quarter.'
   },
   {
@@ -279,7 +279,7 @@ const day3Sessions: Session[] = [
     time: '11:45 AM – 12:30 PM',
     duration: '45 minutes',
     title: 'Team Breakout (Quarterly Planning Part 2)',
-    participants: 'You, relevant sub-teams',
+    participants: 'Nir Zigdon, relevant sub-teams',
     instructions: 'Finalize planning details and goals.'
   },
   {
@@ -287,7 +287,7 @@ const day3Sessions: Session[] = [
     time: '12:30 PM – 1:00 PM',
     duration: '30 minutes',
     title: 'WSR with the PING Team (Optional)',
-    participants: 'Ashish, Ram, possibly you',
+    participants: 'Ashish, Ram, possibly Nir Zigdon',
     instructions: 'Parallel session; you can join or use this time for other tasks (one-on-one with Ritu, etc.).'
   },
   {
@@ -317,7 +317,7 @@ const day3Sessions: Session[] = [
     time: '2:45 PM – 3:45 PM',
     duration: '60 minutes',
     title: 'Quarterly Planning Breakout (Continuation)',
-    participants: 'You, relevant sub-teams',
+    participants: 'Nir Zigdon, relevant sub-teams',
     instructions: 'Wrap up any outstanding planning items.'
   },
   {
@@ -344,7 +344,7 @@ const day4Sessions: Session[] = [
     time: '9:00 AM – 9:30 AM',
     duration: '30 minutes',
     title: 'QA Meetup & Farewell Speeches',
-    speakers: 'You, Mike, Justin, Nitzan, (and new QAs)',
+    speakers: 'Nir Zigdon, Mike, Justin, Nitzan, (and new QAs)',
     participants: 'All guests',
     instructions: 'Offer brief speeches on experiences, suggestions, final remarks.'
   },
