@@ -18,7 +18,7 @@ const getRandomColor = (name: string): string => {
   const colors = [
     'bg-anaplan-blue-stinson',
     'bg-anaplan-blue-coats',
-    'bg-anaplan-blue-mariner',
+    'bg-anaplan-blue-mariner', 
     'bg-anaplan-blue-matisse',
     'bg-anaplan-neutral-cadet',
     'bg-anaplan-neutral-hazell',
@@ -33,17 +33,26 @@ const getRandomColor = (name: string): string => {
 
 const ParticipantAvatar: React.FC<ParticipantAvatarProps> = ({ name, imagePath }) => {
   return (
-    <div className="tooltip" data-tip={name}>
+    <div className="tooltip inline-block" data-tip={name}>
       {imagePath ? (
-        <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-white">
+        <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-white z-10">
           <img
             src={imagePath}
             alt={name}
             className="w-full h-full object-cover"
+            onError={(e) => {
+              // If image fails to load, fallback to initials
+              e.currentTarget.style.display = 'none';
+              e.currentTarget.parentElement!.classList.add(getRandomColor(name));
+              e.currentTarget.parentElement!.classList.add('flex', 'items-center', 'justify-center', 'text-white', 'font-medium');
+              if (e.currentTarget.parentElement!.textContent === '') {
+                e.currentTarget.parentElement!.textContent = getInitials(name);
+              }
+            }}
           />
         </div>
       ) : (
-        <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-medium ${getRandomColor(name)}`}>
+        <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-medium ${getRandomColor(name)} border-2 border-white z-10`}>
           {getInitials(name)}
         </div>
       )}

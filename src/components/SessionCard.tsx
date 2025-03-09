@@ -58,7 +58,25 @@ const SessionCard: React.FC<SessionCardProps> = ({ session }) => {
         </div>
         
         <div className="md:w-3/4">
-          <h3 className="session-title">{session.title}</h3>
+          <div className="flex flex-col mb-3">
+            <div className="flex items-center mb-2">
+              <h3 className="session-title mb-0 mr-3">{session.title}</h3>
+              <div className="flex -space-x-2 overflow-visible">
+                {participantsList.slice(0, 3).map((participant, index) => (
+                  <ParticipantAvatar 
+                    key={`${session.id}-participant-header-${index}`}
+                    name={participant}
+                    imagePath={participantImages[participant]}
+                  />
+                ))}
+                {participantsList.length > 3 && (
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center bg-anaplan-neutral-ghost text-anaplan-neutral-comet text-sm font-medium border-2 border-white">
+                    +{participantsList.length - 3}
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
           
           <Accordion type="single" collapsible>
             <AccordionItem value="details" className="border-none">
@@ -80,9 +98,9 @@ const SessionCard: React.FC<SessionCardProps> = ({ session }) => {
                     <span className="font-medium text-anaplan-blue-midnight">Participants:</span> {session.participants}
                   </div>
                   
-                  {/* Participant Avatars */}
+                  {/* Participant Avatars - Complete list in expanded view */}
                   <div className="mt-4">
-                    <span className="font-medium text-anaplan-blue-midnight block mb-2">Participant Avatars:</span>
+                    <span className="font-medium text-anaplan-blue-midnight block mb-2">All Participants:</span>
                     <div className="flex flex-wrap gap-2">
                       {participantsList.map((participant, index) => (
                         <ParticipantAvatar 
