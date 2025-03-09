@@ -14,23 +14,6 @@ const getInitials = (name: string): string => {
   return name.substring(0, 2).toUpperCase();
 };
 
-const getRandomColor = (name: string): string => {
-  const colors = [
-    'bg-anaplan-blue-stinson',
-    'bg-anaplan-blue-coats',
-    'bg-anaplan-blue-mariner', 
-    'bg-anaplan-blue-matisse',
-    'bg-anaplan-neutral-cadet',
-    'bg-anaplan-neutral-hazell',
-    'bg-anaplan-neutral-manatee',
-    'bg-anaplan-neutral-kimberly'
-  ];
-  
-  // Simple hash function for consistent colors per name
-  const hash = name.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-  return colors[hash % colors.length];
-};
-
 const ParticipantAvatar: React.FC<ParticipantAvatarProps> = ({ name, imagePath }) => {
   return (
     <div className="tooltip inline-block" data-tip={name}>
@@ -43,8 +26,8 @@ const ParticipantAvatar: React.FC<ParticipantAvatarProps> = ({ name, imagePath }
             onError={(e) => {
               // If image fails to load, fallback to initials
               e.currentTarget.style.display = 'none';
-              e.currentTarget.parentElement!.classList.add(getRandomColor(name));
-              e.currentTarget.parentElement!.classList.add('flex', 'items-center', 'justify-center', 'text-white', 'font-medium');
+              e.currentTarget.parentElement!.classList.add('bg-[#081C53]');
+              e.currentTarget.parentElement!.classList.add('flex', 'items-center', 'justify-center', 'text-[#FE6100]', 'font-medium');
               if (e.currentTarget.parentElement!.textContent === '') {
                 e.currentTarget.parentElement!.textContent = getInitials(name);
               }
@@ -52,7 +35,7 @@ const ParticipantAvatar: React.FC<ParticipantAvatarProps> = ({ name, imagePath }
           />
         </div>
       ) : (
-        <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-medium ${getRandomColor(name)} border-2 border-white z-10`}>
+        <div className="w-10 h-10 rounded-full flex items-center justify-center bg-[#081C53] text-[#FE6100] font-medium border-2 border-white z-10">
           {getInitials(name)}
         </div>
       )}

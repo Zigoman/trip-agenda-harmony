@@ -61,19 +61,16 @@ const SessionCard: React.FC<SessionCardProps> = ({ session }) => {
           <div className="flex flex-col mb-3">
             <div className="flex items-center mb-2">
               <h3 className="session-title mb-0 mr-3">{session.title}</h3>
-              <div className="flex -space-x-2 overflow-visible">
-                {participantsList.slice(0, 3).map((participant, index) => (
+              <div className="flex flex-wrap -space-x-2 overflow-visible">
+                {participantsList.map((participant, index) => (
                   <ParticipantAvatar 
                     key={`${session.id}-participant-header-${index}`}
                     name={participant}
                     imagePath={participantImages[participant]}
                   />
                 ))}
-                {participantsList.length > 3 && (
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center bg-anaplan-neutral-ghost text-anaplan-neutral-comet text-sm font-medium border-2 border-white">
-                    +{participantsList.length - 3}
-                  </div>
-                )}
+                {/* Add 'You' avatar in the header as well */}
+                <ParticipantAvatar name="You" />
               </div>
             </div>
           </div>
