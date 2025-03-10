@@ -5,7 +5,7 @@ import { DayAgendaType } from "@/types";
  * Replace these placeholders with real data from the Excel.
  */
 
-export const Yaniv DassaDassaAgenda: DayAgendaType[] = [
+export const yanivDassaAgenda: DayAgendaType[] = [
   {
     day: 1,
     items: [
@@ -471,7 +471,7 @@ export const Yaniv DassaDassaAgenda: DayAgendaType[] = [
 /**
  * If you also have notes/reminders for Yaniv Dassa’s trip, you can define them similarly:
  */
-export const Yaniv DassaDassaNotes = [
+export const yanivDassaNotes = [
   "Confirm hotel checkout on the morning of Day 4",
   "Coordinate with local teams for evening activities",
   // etc.
