@@ -44,7 +44,7 @@ const SessionCard: React.FC<SessionCardProps> = ({ session }) => {
     return participantsString
       .split(/,|\(|\)|\+|and/)
       .map(name => name.trim())
-      .filter(name => name && name !== 'You' && name !== 'Nir Zigdon' && !name.toLowerCase().includes('others') && !name.toLowerCase().includes('team') && name.length > 1);
+      .filter(name => name && !name.toLowerCase().includes('others') && !name.toLowerCase().includes('team') && name.length > 1);
   };
 
   const participantsList = parseParticipants(session.participants);
@@ -98,7 +98,7 @@ const SessionCard: React.FC<SessionCardProps> = ({ session }) => {
                   {/* Participant Avatars - Complete list in expanded view */}
                   <div className="mt-4">
                     <span className="font-medium text-anaplan-blue-midnight block mb-2">All Participants:</span>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap">
                       {participantsList.map((participant, index) => (
                         <ParticipantAvatar 
                           key={`${session.id}-participant-${index}`}

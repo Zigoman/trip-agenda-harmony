@@ -35,7 +35,7 @@ const ParticipantAvatar: React.FC<ParticipantAvatarProps> = ({ name, imagePath }
           />
         </div>
       ) : (
-        <div className="w-10 h-10 rounded-full flex items-center justify-center bg-[#081C53] text-[#FE6100] font-medium border-2 border-white z-10">
+        <div className="w-10 h-10 rounded-full flex items-center justify-center bg-[#081C53] text-white font-medium border-2 border-white z-10">
           {getInitials(name)}
         </div>
       )}
