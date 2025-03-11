@@ -1,4 +1,6 @@
 export const participantImages: Record<string, string> = {
-    "Ashish Kapoor": "/uploads/34516e04-10c3-4267-95cc-1d37c9f6ae8f.png",
-    "Mike Kehler": "/uploads/8df15edd-9efb-4023-960e-388c9375cc28.png",
+    "Nir Zigdon": "./uploads/nir-zigdon.jpeg",
+    "Yaniv Dassa": "./uploads/yaniv-dassa.jpeg",
+    "Mike Kehler": "./uploads/mike-kehler.jpeg",
+    "Justin Gill": "./uploads/justin-gill.png",
 };

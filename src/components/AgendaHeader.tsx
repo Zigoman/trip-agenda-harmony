@@ -20,7 +20,7 @@ const AgendaHeader: React.FC = () => {
         <div className="relative z-10">
           <div className="flex items-center mb-4">
             <img 
-              src="/uploads/c5b354d7-43a7-4f19-9aea-1f4334ecd7f7.png"
+              src="./uploads/anaplan-logo.png"
               alt="Anaplan Logo" 
               className="h-10 mr-2"
             />

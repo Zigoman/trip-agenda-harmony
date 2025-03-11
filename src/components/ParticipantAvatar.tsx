@@ -1,9 +1,9 @@
 
 import React from 'react';
+import {participantImages} from "@/data/general.ts";
 
 type ParticipantAvatarProps = {
   name: string;
-  imagePath?: string;
 };
 
 const getInitials = (name: string): string => {
@@ -14,7 +14,9 @@ const getInitials = (name: string): string => {
   return name.substring(0, 2).toUpperCase();
 };
 
-const ParticipantAvatar: React.FC<ParticipantAvatarProps> = ({ name, imagePath }) => {
+const ParticipantAvatar: React.FC<ParticipantAvatarProps> = ({ name }) => {
+  const imagePath = participantImages[name]
+
   return (
     <div className="tooltip inline-block" data-tip={name}>
       {imagePath ? (
