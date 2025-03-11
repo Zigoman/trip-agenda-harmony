@@ -1,4 +1,5 @@
 import { DayAgendaType } from "@/types";
+import {PlanIQ_Traveling_Members, PlanIQ_UI_Members} from "@/data/general.ts";
 
 export const nirZigdonAgenda: DayAgendaType[] = [
     {
@@ -9,13 +10,7 @@ export const nirZigdonAgenda: DayAgendaType[] = [
                 timeEnd: "08:30",
                 title: "Arrival",
                 speakers: "",
-                participants: [
-                    "Justin Gill",
-                    "Mike Kehler",
-                    "Nitzan Paz",
-                    "Yaniv Dassa",
-                    "Nir Zigdon"
-                ],
+                participants: [...PlanIQ_Traveling_Members],
                 instructions: [
                     "Expect traffic; aim to be at the office by 9:00 AM."
                 ],
@@ -27,10 +22,8 @@ export const nirZigdonAgenda: DayAgendaType[] = [
                 title: "Paperwork & Building Orientation",
                 speakers: "Aniruddha Shendrikar",
                 participants: [
-                    "All guests",
-                    "Ashish Kapoor",
-                    "UI team",
-                    "others"
+                    ...PlanIQ_Traveling_Members,
+                    ...PlanIQ_UI_Members
                 ],
                 instructions: [
                     "Complete any necessary paperwork.",
@@ -43,7 +36,7 @@ export const nirZigdonAgenda: DayAgendaType[] = [
                 timeEnd: "09:45",
                 title: "Move to the 7th Floor & Seating Arrangements",
                 speakers: "Aniruddha Shendrikar",
-                participants: ["All guests"],
+                participants: [...PlanIQ_Traveling_Members],
                 instructions: [
                     "Familiarize yourselves with seating assignments."
                 ],
@@ -54,7 +47,7 @@ export const nirZigdonAgenda: DayAgendaType[] = [
                 timeEnd: "10:00",
                 title: "Welcome Connect",
                 speakers: "Aniruddha Shendrikar",
-                participants: ["All guests"],
+                participants: [...PlanIQ_Traveling_Members],
                 instructions: [
                     "Brief walkthrough of the entire multi-day agenda.",
                     "Discuss any device plans or immediate feedback."
@@ -66,7 +59,7 @@ export const nirZigdonAgenda: DayAgendaType[] = [
                 timeEnd: "10:30",
                 title: "Floor Walk & Team Introductions",
                 speakers: "Aniruddha Shendrikar",
-                participants: ["All guests", "local Data & IT teams"],
+                participants: [...PlanIQ_Traveling_Members, "local Data & IT teams"],
                 instructions: [
                     "Visit Data/AI, Radio, and (optionally) Platform Services areas."
                 ],
@@ -77,7 +70,7 @@ export const nirZigdonAgenda: DayAgendaType[] = [
                 timeEnd: "11:00",
                 title: "Team Structure & Recruitment Updates",
                 speakers:
-                    "Aniruddha Shendrikar, Ankur (optional), plus open discussion",
+                    "Aniruddha Shendrikar, Ankur, plus open discussion",
                 participants: ["Nir Zigdon", "Justin Gill", "Nitzan Paz", "Yaniv Dassa"],
                 instructions: [
                     "Review team org charts, upcoming positions, recruitment statuses.",
@@ -99,7 +92,7 @@ export const nirZigdonAgenda: DayAgendaType[] = [
                 timeEnd: "12:00",
                 title: "Data Legacy & Vision",
                 speakers: "Mike Kehler",
-                participants: ["All guests"],
+                participants: [...PlanIQ_Traveling_Members],
                 instructions: [
                     "Overview of data journey so far and upcoming data offerings."
                 ],
@@ -121,7 +114,7 @@ export const nirZigdonAgenda: DayAgendaType[] = [
                 timeEnd: "13:30",
                 title: "Product Management Connect",
                 speakers: "Yaniv Dassa",
-                participants: ["All guests"],
+                participants: [...PlanIQ_Traveling_Members],
                 instructions: [
                     "Share market insights, upcoming feature roadmaps, and product visions."
                 ],
@@ -151,7 +144,7 @@ export const nirZigdonAgenda: DayAgendaType[] = [
                 timeEnd: "15:00",
                 title: "Town Hall Meeting",
                 speakers: "Tom, Mike, and other leaders",
-                participants: ["All guests"],
+                participants: [...PlanIQ_Traveling_Members],
                 instructions: [
                     "Company-wide updates and Q&A."
                 ],
@@ -171,7 +164,7 @@ export const nirZigdonAgenda: DayAgendaType[] = [
                 timeEnd: "16:15",
                 title: "PlanIQ UI Retrospective",
                 speakers: "",
-                participants: ["Nir Zigdon", "Mike (schedule permitting)", "Ashish Kapoor", "UI Team"],
+                participants: ["Nir Zigdon", "Mike (schedule permitting)", "Ashish Kapoor", ...PlanIQ_UI_Members],
                 instructions: [
                     "Review prior sprint outcomes, gather improvement ideas."
                 ],
@@ -225,9 +218,9 @@ export const nirZigdonAgenda: DayAgendaType[] = [
                 speakers: "",
                 participants: [
                     "Nir Zigdon",
-                    "Justin (optional)",
-                    "Nitzan (optional)",
-                    "Yaniv (optional)"
+                    "Justin Gill",
+                    "Nitzan Paz",
+                    "Yaniv Dassa"
                 ],
                 instructions: [
                     "Attend as observers to see how another team structures its planning."
@@ -248,7 +241,7 @@ export const nirZigdonAgenda: DayAgendaType[] = [
                 timeEnd: "12:00",
                 title: "PlanIQ Backend Architecture",
                 speakers: "Nitzan Paz, Justin Gill",
-                participants: ["All guests"],
+                participants: [...PlanIQ_Traveling_Members],
                 instructions: [
                     "Deep dive into current backend architecture.",
                     "Collect feedback, define action items."
@@ -302,7 +295,7 @@ export const nirZigdonAgenda: DayAgendaType[] = [
                 timeEnd: "16:30",
                 title: "PlanIQ Architectural Roadmap",
                 speakers: "",
-                participants: ["All guests"],
+                participants: [...PlanIQ_Traveling_Members],
                 instructions: [
                     "High-level architecture, backend interactions, long-term vision."
                 ],
@@ -332,7 +325,7 @@ export const nirZigdonAgenda: DayAgendaType[] = [
             {
                 timeStart: "17:30",
                 timeEnd: "17:45",
-                title: "One-on-One with Ashish (Optional)",
+                title: "One-on-One with Ashish",
                 speakers: "",
                 participants: ["Ashish Kapoor"],
                 instructions: [
@@ -380,7 +373,7 @@ export const nirZigdonAgenda: DayAgendaType[] = [
                 timeEnd: "11:45",
                 title: "Quarterly Planning – Breakout Session 1",
                 speakers: "",
-                participants: ["Nir Zigdon", "relevant sub-teams"],
+                participants: ["Nir Zigdon", ...PlanIQ_UI_Members],
                 instructions: [
                     "Identify tasks, resources needed, timelines for the next quarter."
                 ],
@@ -391,14 +384,14 @@ export const nirZigdonAgenda: DayAgendaType[] = [
                 timeEnd: "12:30",
                 title: "Quarterly Planning – Breakout Session 2",
                 speakers: "",
-                participants: ["Nir Zigdon", "relevant sub-teams"],
+                participants: ["Nir Zigdon", ...PlanIQ_UI_Members],
                 instructions: ["Finalize planning details and goals."],
                 location: ""
             },
             {
                 timeStart: "12:30",
                 timeEnd: "13:00",
-                title: "WSR with the PING Team (Optional)",
+                title: "WSR with the PING Team",
                 speakers: "",
                 participants: ["Ashish Kapoor", "Ram", "Nir Zigdon"],
                 instructions: [
@@ -440,7 +433,7 @@ export const nirZigdonAgenda: DayAgendaType[] = [
                 timeEnd: "15:45",
                 title: "Quarterly Planning – Finalization",
                 speakers: "",
-                participants: ["Nir Zigdon", "relevant sub-teams"],
+                participants: ["Nir Zigdon", ...PlanIQ_UI_Members],
                 instructions: [
                     "Wrap up any outstanding planning items."
                 ],
@@ -532,7 +525,7 @@ export const nirZigdonAgenda: DayAgendaType[] = [
     }
 ];
 
-// (Optional) If you also want to store your “Notes & Reminders” content separately:
+// If you also want to store your “Notes & Reminders” content separately:
 export const nirZigdonNotes = {
     actionItems: [
         "Ashish & Monisha will capture meeting minutes during specific discussions (API negotiations, etc.).",
