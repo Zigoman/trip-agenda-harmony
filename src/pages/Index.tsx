@@ -3,13 +3,12 @@ import React, { useState } from "react";
 import AgendaHeader from "@/components/AgendaHeader";
 import DayTabs from "@/components/DayTabs";
 import DayAgenda from "@/components/DayAgenda";
-import FooterInfo from "@/components/FooterInfo";
 
-// 1) Import the DayAgenda array & notes for Nir
-import { nirZigdonAgenda, nirZigdonNotes } from "@/data/nirZigdonData";
-import {yanivDassaAgenda, yanivDassaNotes} from "@/data/yanivDassaData.ts";
+import { nirZigdonAgenda } from "@/data/nirZigdonData";
+import {yanivDassaAgenda} from "@/data/yanivDassaData.ts";
 import {useSearchParams} from "react-router-dom";
 import {DayAgendaType} from "@/types.ts";
+import {nitzanJustinAgenda} from "@/data/nitzanJustinData.ts";
 
 const Index: React.FC = () => {
   // 1) Grab the query param
@@ -18,18 +17,21 @@ const Index: React.FC = () => {
 
   // 2) Decide which agenda/notes to load via switch
   let agendaToShow: DayAgendaType[] = [{day: 1, items: []}];
-  let notesToShow = null;
+  // let notesToShow = null;
 
   switch (userId) {
     case "nir.zigdon":
       agendaToShow = nirZigdonAgenda;
-      notesToShow = nirZigdonNotes;
       break;
-
-      case "yaniv.dassa":
-        agendaToShow = yanivDassaAgenda;
-        notesToShow = yanivDassaNotes;
+      case "nitzan.paz":
+        agendaToShow = nitzanJustinAgenda;
         break;
+    case "justin.gill":
+      agendaToShow = nitzanJustinAgenda;
+      break;
+    case "yaniv.dassa":
+      agendaToShow = yanivDassaAgenda;
+      break;
     default:
       break;
   }

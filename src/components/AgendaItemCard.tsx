@@ -65,7 +65,7 @@ const AgendaItemCard: React.FC<AgendaItemCardProps> = ({item}) => {
 
                         {/* Participant Avatars (for the "header" view) */}
                         <div className="flex flex-wrap -space-x-2 overflow-visible">
-                            {item.participants?.map((pName, index) => (
+                            {Array.from(new Set(item.participants)).map((pName, index) => (
                                 <ParticipantAvatar
                                     key={`header-${pName}-${index}`}
                                     name={pName}
@@ -98,14 +98,14 @@ const AgendaItemCard: React.FC<AgendaItemCardProps> = ({item}) => {
                                     <div>
                                         <span
                                             className="font-medium text-anaplan-blue-midnight">Participants:</span>{" "}
-                                        {item.participants.join(", ")}
+                                        {Array.from(new Set(item.participants)).join(", ")}
                                     </div>
                                 )}
 
                                 <div className="mt-4">
                                     <span className="font-medium text-anaplan-blue-midnight block mb-2">All Participants:</span>
                                     <div className="flex flex-wrap">
-                                        {item.participants?.map((pName, index) => (
+                                        {Array.from(new Set(item.participants)).map((pName, index) => (
                                             <ParticipantAvatar
                                                 key={`expanded-${pName}-${index}`}
                                                 name={pName}
