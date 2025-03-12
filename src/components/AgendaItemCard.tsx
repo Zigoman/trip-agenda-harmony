@@ -61,7 +61,10 @@ const AgendaItemCard: React.FC<AgendaItemCardProps> = ({item}) => {
             <div className="md:w-3/4">
                 <div className="flex flex-col mb-3">
                     <div className="flex items-center mb-2 max-md:flex-wrap justify-between">
-                        <h3 className="session-title mb-0 mr-3">{item.title}</h3>
+                        <div>
+                            <h3 className="session-title mb-0 mr-3">{item.title}</h3>
+                            {item.location && (<h3 className="session-title mb-0 mr-3 location-chip">at {item.location}</h3>)}
+                        </div>
                         <div className="flex -space-x-2 overflow-visible">
                             {Array.from(new Set(item.participants)).slice(0, 6).map((pName, index) => (
                                 <ParticipantAvatar
@@ -88,21 +91,18 @@ const AgendaItemCard: React.FC<AgendaItemCardProps> = ({item}) => {
                                         <span
                                             className="font-medium text-anaplan-blue-midnight">Participants:</span>{" "}
                                         {Array.from(new Set(item.participants)).join(", ")}
+                                        <div className="mt-4">
+                                            <div className="flex flex-wrap">
+                                                {Array.from(new Set(item.participants)).map((pName, index) => (
+                                                    <ParticipantAvatar
+                                                        key={`expanded-${pName}-${index}`}
+                                                        name={pName}
+                                                    />
+                                                ))}
+                                            </div>
+                                        </div>
                                     </div>
                                 )}
-
-                                <div className="mt-4">
-                                    <span className="font-medium text-anaplan-blue-midnight block mb-2">All Participants:</span>
-                                    <div className="flex flex-wrap">
-                                        {Array.from(new Set(item.participants)).map((pName, index) => (
-                                            <ParticipantAvatar
-                                                key={`expanded-${pName}-${index}`}
-                                                name={pName}
-                                            />
-                                        ))}
-                                    </div>
-                                </div>
-
                                 {/* Instructions (array of strings) */}
                                 {item.instructions && item.instructions.length > 0 && (
                                     <div>

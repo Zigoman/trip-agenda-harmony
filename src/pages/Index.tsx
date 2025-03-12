@@ -40,10 +40,10 @@ const Index: React.FC = () => {
   const currentDay = agendaToShow[activeDay];
   return (
       <div className="min-h-screen bg-anaplan-neutral-athens pb-10">
-        <div className="max-w-5xl mx-auto px-4 py-8">
+        <div className="max-w-5xl mx-auto py-8">
           <AgendaHeader />
 
-          <div className="bg-white shadow-sm rounded-lg p-6 mb-10">
+          <div className="bg-white shadow-sm rounded-lg p-6 px-2 mb-10">
             {/* If your DayTabs use 1-based day indexing, shift accordingly */}
             <DayTabs
                 activeDay={activeDay + 1}

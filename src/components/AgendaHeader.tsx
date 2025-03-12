@@ -3,7 +3,7 @@ import React from 'react';
 
 const AgendaHeader: React.FC = () => {
   return (
-    <header className="mb-10 relative">
+    <header className="mb-10 relative max-md:px-2">
       <div className="bg-anaplan-blue-midnight py-16 px-8 rounded-lg overflow-hidden relative">
         <div className="absolute top-0 right-0 bottom-0 left-0">
           <div className="absolute top-0 left-0 w-full h-full">
