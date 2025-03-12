@@ -63,7 +63,7 @@ const AgendaItemCard: React.FC<AgendaItemCardProps> = ({item}) => {
                     <div className="flex items-center mb-2 max-md:flex-wrap justify-between">
                         <div>
                             <h3 className="session-title mb-0 mr-3">{item.title}</h3>
-                            {item.location && (<h3 className="session-title mb-0 mr-3 location-chip">at {item.location}</h3>)}
+                            {item.location && (<h3 className="session-title mb-3 mt-2 location-chip">at {item.location}</h3>)}
                         </div>
                         <div className="flex -space-x-2 overflow-visible">
                             {Array.from(new Set(item.participants)).slice(0, 6).map((pName, index) => (
@@ -76,7 +76,7 @@ const AgendaItemCard: React.FC<AgendaItemCardProps> = ({item}) => {
                     </div>
                 </div>
 
-                <Accordion type="single" collapsible>
+                {((item.participants && item.participants.length > 0) || (item.instructions && item.instructions.length > 0)) && (<Accordion type="single" collapsible>
                     <AccordionItem value="details" className="border-none">
                         <AccordionTrigger
                             onClick={() => setIsExpanded((prev) => !prev)}
@@ -118,7 +118,7 @@ const AgendaItemCard: React.FC<AgendaItemCardProps> = ({item}) => {
                             </div>
                         </AccordionContent>
                     </AccordionItem>
-                </Accordion>
+                </Accordion>)}
             </div>
         </div>
     </div>);
