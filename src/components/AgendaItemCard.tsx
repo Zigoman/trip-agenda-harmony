@@ -60,15 +60,13 @@ const AgendaItemCard: React.FC<AgendaItemCardProps> = ({item}) => {
             {/* Right column: Title, participants, details */}
             <div className="md:w-3/4">
                 <div className="flex flex-col mb-3">
-                    <div className="flex items-center mb-2">
-                        <h3 className="session-title mb-0 mr-3 flex-1">{item.title}</h3>
-
-                        {/* Participant Avatars (for the "header" view) */}
-                        <div className="flex flex-wrap -space-x-2 overflow-visible">
-                            {Array.from(new Set(item.participants)).map((pName, index) => (
+                    <div className="flex items-center mb-2 max-md:flex-wrap justify-between">
+                        <h3 className="session-title mb-0 mr-3">{item.title}</h3>
+                        <div className="flex -space-x-2 overflow-visible">
+                            {Array.from(new Set(item.participants)).slice(0, 6).map((pName, index) => (
                                 <ParticipantAvatar
                                     key={`header-${pName}-${index}`}
-                                    name={pName}
+                                    name={index === 5 ? "+" : pName}
                                 />
                             ))}
                         </div>
@@ -85,15 +83,6 @@ const AgendaItemCard: React.FC<AgendaItemCardProps> = ({item}) => {
                         </AccordionTrigger>
                         <AccordionContent className="pt-3">
                             <div className="space-y-3 text-anaplan-neutral-mulledwine">
-                                {/* Speakers, if any */}
-                                {item.speakers && (
-                                    <div>
-                                        <span
-                                            className="font-medium text-anaplan-blue-midnight">Speakers:</span> {item.speakers}
-                                    </div>
-                                )}
-
-                                {/* Participants (full list) */}
                                 {item.participants && (
                                     <div>
                                         <span
